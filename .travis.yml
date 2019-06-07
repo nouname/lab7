@@ -1,0 +1,19 @@
+language:
+- cpp
+before_install:
+- pip install --user cpp-coveralls
+addons:
+  sonarcloud:
+    organization: nouname-github
+dist: xenial
+script:
+- echo 'TEST' > input.txt
+- ( echo 'TEST' && echo 'TEST STRING' && echo 'HELLO' ) > long.txt
+- qmake
+- make
+- "./tests/tests"
+after_success:
+- coveralls --root . -E ".*external.*" -E ".*editor-tests.*"
+cache:
+  directories:
+  - "$HOME/.sonar/cache"

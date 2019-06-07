@@ -6,6 +6,16 @@ CONFIG -= app_bundle
 CONFIG += thread
 CONFIG -= qt
 
+QMAKE_CXXFLAGS += -Wall -Wextra -Werror
+QMAKE_CFLAGS += -Wall -Wextra -Werror
+
+# gcov
+QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
+QMAKE_CFLAGS += -fprofile-arcs -ftest-coverage
+
+LIBS += -lgcov
+
+
 HEADERS += \
     ../app/common.h \
     ../app/text/_text.h \
@@ -29,5 +39,4 @@ SOURCES += \
         ../app/text/remove_all.c \
         main.cpp
 
-DISTFILES += \
-    ../app/text/libtext.a
+DISTFILES +=
