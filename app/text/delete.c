@@ -8,7 +8,7 @@
 
 #include "_text.h"
 
-void delete(text txt, int line_num){
+void _delete(text txt, int line_num){
     
     node *p = txt->begin;
     for (int i = 1; i < line_num; i++)

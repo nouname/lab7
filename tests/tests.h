@@ -11,16 +11,6 @@ extern "C" {
     #include "../app/common.h"
 }
 
-static void func(int index, char *contents, int cursor, void *data);
-
-static void func(int index, char *contents, int cursor, void *data) {
-    UNUSED(index);
-    UNUSED(cursor);
-    UNUSED(data);
-
-    assert(contents != NULL);
-}
-
 using namespace testing;
 
 TEST(test1, tests)

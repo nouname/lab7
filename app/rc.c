@@ -11,7 +11,7 @@
 #include <ctype.h> 
 #include <string.h> 
 #include "common.h" 
-#include "text/text.h" 
+#include "text/text.h"
 
 static void delete_line(int index, char *contents, int cursor, void *data);
 
@@ -31,6 +31,6 @@ static void delete_line(int index, char *contents, int cursor, void *data);
      if (cursor >= 0)
      {
 	 m(data,index,1);
-	 delete(data, index+1);   
+     _delete(data, index+1);
      }
  }
